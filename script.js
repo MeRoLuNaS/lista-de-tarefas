@@ -26,13 +26,13 @@ function renderizarTarefas() {
             li.classList.add("concluida");
             li.innerHTML = `<span>✅ ${tarefa.texto}</span>`;
 
-            // Botão Desfazer
+            // Botão Desfazer (Agora com a classe amarela .btn-desfazer)
             const btnDesfazer = document.createElement("button");
             btnDesfazer.textContent = "Desfazer";
-            btnDesfazer.classList.add("btn-concluir");
+            btnDesfazer.classList.add("btn-desfazer");
             btnDesfazer.addEventListener("click", () => alternarConcluida(index));
 
-            // Desativa o botão remover quando concluída
+            // Desativa o botão remover quando a tarefa está concluída
             btnRemover.disabled = true;
 
             divAcoes.appendChild(btnDesfazer);
