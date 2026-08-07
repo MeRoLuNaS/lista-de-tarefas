@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minha Lista de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Minha Lista de Tarefas</h1>
-    
-    <!-- Campo de entrada e botão de adicionar -->
-    <input type="text" id="campoTarefa" placeholder="Digite uma nova tarefa...">
-    <button id="btnAdicionar">Adicionar</button>
+    <div class="container">
+        <h1>Minha Lista de Tarefas</h1>
+        
+        <!-- Formulário de adição -->
+        <div class="input-group">
+            <input type="text" id="campoTarefa" placeholder="Digite uma nova tarefa...">
+            <button id="btnAdicionar">Adicionar</button>
+        </div>
 
-    <!-- Lista onde as tarefas vão aparecer -->
-    <ul id="listaTarefas"></ul>
+        <!-- Contador de tarefas pendentes -->
+        <p id="contadorPendentes">Tarefas pendentes: 0</p>
+
+        <!-- Lista onde as tarefas vão aparecer em baixo -->
+        <ul id="listaTarefas"></ul>
+    </div>
 
     <script src="script.js"></script>
 </body>
