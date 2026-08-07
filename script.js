@@ -8,6 +8,9 @@ let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
 function renderizarTarefas() {
     listaTarefas.innerHTML = "";
 
+    // Ordena o array: tarefas pendentes primeiro (false), concluídas por último (true)
+    tarefas.sort((a, b) => a.concluida - b.concluida);
+
     tarefas.forEach((tarefa, index) => {
         const li = document.createElement("li");
         const divAcoes = document.createElement("div");
@@ -29,7 +32,7 @@ function renderizarTarefas() {
             btnDesfazer.classList.add("btn-concluir");
             btnDesfazer.addEventListener("click", () => alternarConcluida(index));
 
-            // Desativa o botão remover quando a tarefa está concluída
+            // Desativa o botão remover quando concluída
             btnRemover.disabled = true;
 
             divAcoes.appendChild(btnDesfazer);
